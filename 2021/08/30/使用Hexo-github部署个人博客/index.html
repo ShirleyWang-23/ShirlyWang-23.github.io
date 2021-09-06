@@ -24,7 +24,7 @@
 <meta property="og:description" content="个人博客搭建记录">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-08-30T12:20:04.000Z">
-<meta property="article:modified_time" content="2021-09-06T13:08:11.323Z">
+<meta property="article:modified_time" content="2021-09-06T13:16:29.145Z">
 <meta property="article:author" content="Henry">
 <meta property="article:tag" content="Hexo">
 <meta name="twitter:card" content="summary_large_image">
@@ -306,7 +306,7 @@
 </tr>
 <tr>
 <td align="left"><code>comments</code></td>
-<td align="left">开启文章的评论功能</td>
+<td align="left">开启文章的评论功能(boolen值)</td>
 <td align="left">true</td>
 </tr>
 <tr>
@@ -393,6 +393,35 @@
               
             </div>
 
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"APjDJRCEtwETk2JqAx6lmCiS-gzGzoHsz","appKey":"NBAOoEsFe7YFr915DSzxn3BD","placeholder":"说点什么","path":"window.location.pathname","avatar":"retro","meta":["nick","mail","link"],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false,"requiredFields":[]},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          Fluid.plugins.initFancyBox('#valine .vcontent img:not(.vemoji)');
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
             
           </article>
         </div>
