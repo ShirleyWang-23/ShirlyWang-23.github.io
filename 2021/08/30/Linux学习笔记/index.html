@@ -24,7 +24,7 @@
 <meta property="og:description" content="Linux基础知识、命令和踩坑记录">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-08-30T11:47:48.000Z">
-<meta property="article:modified_time" content="2021-09-06T12:25:36.885Z">
+<meta property="article:modified_time" content="2021-09-06T12:46:01.806Z">
 <meta property="article:author" content="Henry">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary_large_image">
@@ -244,7 +244,16 @@
               </p>
             
             <div class="markdown-body">
-              <h2 id="Part-1：-bash"><a href="#Part-1：-bash" class="headerlink" title="Part 1： bash"></a>Part 1： bash</h2><h3 id="1-压缩文件"><a href="#1-压缩文件" class="headerlink" title="1. 压缩文件"></a>1. 压缩文件</h3><p>*.zip          zip 程序压缩的文件;<br>*.gz           gzip 程序压缩的文件;#windows中的WinRaR/7Zip可解压<br>*.bz2          bzip2 程序压缩的文件;#比gzip更好<br>*.xz           xz 程序压缩的文件;#压缩比更高<br>#因为上述程序通常只能压缩一个文件，所以在压缩多个文件时非常不方便<br>#所以产生了tar这个打包程序，将多个文件打包成一个文件！<br>*.tar          tar 程序打包的数据,#并没有压缩过;<br>*.tar.gz      tar 程序打包的文件,其中并且经过 gzip 的压缩<br>*.tar.bz2      tar 程序打包的文件,其中并且经过 bzip2 的压缩<br>*.tar.xz      tar 程序打包的文件,其中并且经过 xz 的压缩</p>
+              <blockquote>
+<p>《鸟叔的》</p>
+</blockquote>
+<blockquote>
+<p>《鸟叔的Linux私房菜》</p>
+</blockquote>
+<blockquote>
+<p>推荐阅读：《鸟叔的Linux私房菜》</p>
+</blockquote>
+<h2 id="Part-1：-bash"><a href="#Part-1：-bash" class="headerlink" title="Part 1： bash"></a>Part 1： bash</h2><h3 id="1-压缩文件"><a href="#1-压缩文件" class="headerlink" title="1. 压缩文件"></a>1. 压缩文件</h3><p>*.zip          zip 程序压缩的文件;<br>*.gz           gzip 程序压缩的文件;#windows中的WinRaR/7Zip可解压<br>*.bz2          bzip2 程序压缩的文件;#比gzip更好<br>*.xz           xz 程序压缩的文件;#压缩比更高<br>#因为上述程序通常只能压缩一个文件，所以在压缩多个文件时非常不方便<br>#所以产生了tar这个打包程序，将多个文件打包成一个文件！<br>*.tar          tar 程序打包的数据,#并没有压缩过;<br>*.tar.gz      tar 程序打包的文件,其中并且经过 gzip 的压缩<br>*.tar.bz2      tar 程序打包的文件,其中并且经过 bzip2 的压缩<br>*.tar.xz      tar 程序打包的文件,其中并且经过 xz 的压缩</p>
 <h4 id="1-单个文件-gz-bz2-xz"><a href="#1-单个文件-gz-bz2-xz" class="headerlink" title="(1) 单个文件: .gz   .bz2   xz"></a>(1) 单个文件: <code>.gz</code>   <code>.bz2</code>   <code>xz</code></h4><p>用法几乎相同</p>
 <figure class="highlight diff"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs diff"><span class="hljs-deletion">-d :解压缩</span><br><span class="hljs-deletion">-c :将压缩的过程产生的数据输出到屏幕上</span><br><span class="hljs-deletion">-k :保留原本的文件</span><br><span class="hljs-deletion">-v :可以显示出原文件/压缩文件案的压缩比等信息;</span><br><span class="hljs-deletion">-# :#为数字的意思,代表压缩等级,默认是6</span><br><span class="hljs-deletion">-l :列出压缩文件的相关信息</span><br></code></pre></div></td></tr></table></figure>
 
@@ -258,9 +267,9 @@
 <ul>
 <li>直接解压：</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">解压: $ tar -Jxv -f  ***.tar.xz<br>压缩: $ tar -Jcv -f  ***.tar.xz    <span class="hljs-comment">#compress</span><br><span class="hljs-comment">#对于tar.gz : 将J改为z</span><br><span class="hljs-comment">#对于tar.bz2: 将J改为j</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"> $ tar -Jxv -f  ***.tar.xz	  <span class="hljs-comment">#解压</span><br> $ tar -Jcv -f  ***.tar.xz    <span class="hljs-comment">#压缩 compress</span><br><span class="hljs-comment">#对于tar.gz : 将J改为z</span><br><span class="hljs-comment">#对于tar.bz2: 将J改为j</span><br></code></pre></div></td></tr></table></figure>
 
-<h3 id="2-安装"><a href="#2-安装" class="headerlink" title="2. 安装"></a>2. 安装</h3><h4 id="2-1-Ubuntu及类似环境下"><a href="#2-1-Ubuntu及类似环境下" class="headerlink" title="2.1 Ubuntu及类似环境下"></a>2.1 Ubuntu及类似环境下</h4><h5 id="1-deb"><a href="#1-deb" class="headerlink" title="(1) deb"></a>(1) deb</h5><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ sudo dpkg -i xxxx.deb<br><span class="hljs-comment">#对于官⽹已经提供了 Ubuntu 版本 .deb 安装⽂件的，可在官⽹下载 .deb 安装⽂件后，执⾏下⾯的命令安装</span><br>$ sudo apt install ./&lt;file&gt;.deb<br></code></pre></div></td></tr></table></figure>
+<h3 id="2-使用安装包"><a href="#2-使用安装包" class="headerlink" title="2. 使用安装包"></a>2. 使用安装包</h3><h4 id="2-1-Ubuntu及类似环境下"><a href="#2-1-Ubuntu及类似环境下" class="headerlink" title="2.1 Ubuntu及类似环境下"></a>2.1 Ubuntu及类似环境下</h4><h5 id="1-deb"><a href="#1-deb" class="headerlink" title="(1) deb"></a>(1) deb</h5><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ sudo dpkg -i xxxx.deb<br><span class="hljs-comment">#对于官⽹已经提供了 Ubuntu 版本 .deb 安装⽂件的，可在官⽹下载 .deb 安装⽂件后，执⾏下⾯的命令安装</span><br>$ sudo apt install ./&lt;file&gt;.deb<br></code></pre></div></td></tr></table></figure>
 
 <h5 id="2-rmp"><a href="#2-rmp" class="headerlink" title="(2) rmp"></a>(2) rmp</h5><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-comment"># 将.rpm 包转换为.deb 包（当前⽬录下会⽣成⼀个 deb 安装包)</span><br>sudo alien xxxx.rpm<br><span class="hljs-comment"># 安装</span><br>sudo dpkg -i xxxx.deb<br></code></pre></div></td></tr></table></figure>
 
