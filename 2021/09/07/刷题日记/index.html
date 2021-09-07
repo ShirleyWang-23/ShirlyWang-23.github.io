@@ -29,7 +29,7 @@
 <meta property="og:image" content="https://img-blog.csdn.net/20160714144315409">
 <meta property="og:image" content="https://img-blog.csdn.net/20160714161107576">
 <meta property="article:published_time" content="2021-09-07T08:04:39.000Z">
-<meta property="article:modified_time" content="2021-09-07T11:42:48.952Z">
+<meta property="article:modified_time" content="2021-09-07T11:46:39.329Z">
 <meta property="article:author" content="Henry">
 <meta property="article:tag" content="刷题">
 <meta property="article:tag" content="洛谷">
@@ -213,7 +213,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      42 分钟
+      43 分钟
     </span>
   
 
@@ -272,7 +272,8 @@
 <blockquote>
 <p>注意范围：sort(a,a+10)是对a[0]-a[9]的元素排序</p>
 </blockquote>
-</li>
+<p>sort(first, last, cmp)：采用<code>cmp</code>函数指定的比较方式对元素进行排序</p>
+<figure class="highlight cpp"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">cmp</span><span class="hljs-params">(mystruct a,mystruct b)</span></span>&#123;<span class="hljs-comment">//此处定义的是sort的比较函数cmp</span><br>    <span class="hljs-keyword">return</span> a.num&lt;b.num; <span class="hljs-comment">//升序排列</span><br>&#125;<br></code></pre></div></td></tr></table></figure></li>
 </ol>
 <h3 id="1-技巧"><a href="#1-技巧" class="headerlink" title="1. 技巧"></a>1. 技巧</h3><h4 id="1-1-P2367-区间修改"><a href="#1-1-P2367-区间修改" class="headerlink" title="1.1 P2367 区间修改"></a>1.1 P2367 区间修改</h4><blockquote>
 <p>一开始使用暴力遍历, 在跑大数据集时超时, 于是学习了差分数组</p>
