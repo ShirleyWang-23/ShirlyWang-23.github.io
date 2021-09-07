@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>洛谷刷题日记</title>
+    <link href="/2021/09/07/%E5%88%B7%E9%A2%98%E6%97%A5%E8%AE%B0/"/>
+    <url>/2021/09/07/%E5%88%B7%E9%A2%98%E6%97%A5%E8%AE%B0/</url>
+    
+    <content type="html"><![CDATA[<h2 id="2021-9-7"><a href="#2021-9-7" class="headerlink" title="2021/9/7"></a>2021/9/7</h2><h3 id="P1918-保龄球"><a href="#P1918-保龄球" class="headerlink" title="P1918 保龄球"></a><strong>P1918 保龄球</strong></h3><blockquote><p>题意概括：给你一组数字，再给你一组目标数字，求目标数字在原数组中的位置。原题面看<a href="https://www.luogu.com.cn/problem/P1918">这里</a></p></blockquote><blockquote><p>难度：普及-</p></blockquote><h3 id="思路记录"><a href="#思路记录" class="headerlink" title="思路记录"></a>思路记录</h3><p>​        第一反应是桶，即用数组的下标表示数字，值表示位置，如pos[goal]=pos， 这样在输入数据后就能直接通过数字得到位置。但是本题的数据范围很大（10^9），空间消耗太大，显然不合适。也肯定不能直接遍历，效率太低。</p><p>​        考虑二分查找，但是由于二分查找需要先对原数组进行排序，这会破坏元素在原数组中的位置，所以想到<strong>结构体</strong>。对于结构体元素使用STL的sort函数进行排序时需要额外定义比较函数（指明比较结构体的哪些元素，即给出比较两个结构体大小的方式），这样这道题就做完了，具体代码如下。</p><p>​        因为题目指明了每个位置的球数不同，所以使用map更简单（其实就是桶的思维），直接无脑解决。</p><h3 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h3><figure class="highlight cpp"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-keyword">int</span> n,Q,goal,i;<br><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">ball_struct</span>&#123;</span><br>    <span class="hljs-keyword">int</span> num;<br>    <span class="hljs-keyword">int</span> pos;<br>&#125;ball[<span class="hljs-number">1000001</span>];<br><br><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">cmp</span><span class="hljs-params">(ball_struct a,ball_struct b)</span></span>&#123;<span class="hljs-comment">//此处定义的是sort的比较函数cmp</span><br>    <span class="hljs-keyword">return</span> a.num&lt;b.num; <span class="hljs-comment">//升序排列</span><br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">binary_search</span><span class="hljs-params">(<span class="hljs-keyword">int</span> key)</span></span>&#123;<br>    <span class="hljs-keyword">int</span> mid,start=<span class="hljs-number">0</span>,end=n<span class="hljs-number">-1</span>;<br>    <span class="hljs-keyword">while</span>(start&lt;=end) &#123;<br>        mid = start+((end-start)&gt;&gt;<span class="hljs-number">1</span>);<span class="hljs-comment">//注意此处采用位操作防止溢出，同时提高执行速度</span><br>        <span class="hljs-keyword">if</span>(key&gt;ball[mid].num) start=mid+<span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(key&lt;ball[mid].num) end=mid<span class="hljs-number">-1</span>;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> ball[mid].pos;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    cin &gt;&gt; n;<br>    <span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;i&lt;n;i++)&#123;<br>        <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>,&amp;ball[i].num);<br>        ball[i].pos=i+<span class="hljs-number">1</span>;<br>    &#125;<br>    cin &gt;&gt; Q;<br>    <span class="hljs-built_in">sort</span>(ball,ball+n,cmp);<br>    <span class="hljs-keyword">while</span>(Q--)&#123;<br>        <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>,&amp;goal);<br>        cout &lt;&lt; <span class="hljs-built_in">binary_search</span>(goal) &lt;&lt; endl;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>刷题记录</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>刷题</tag>
+      
+      <tag>洛谷</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>九月计划</title>
     <link href="/2021/09/06/%E4%B9%9D%E6%9C%88%E8%AE%A1%E5%88%92/"/>
     <url>/2021/09/06/%E4%B9%9D%E6%9C%88%E8%AE%A1%E5%88%92/</url>

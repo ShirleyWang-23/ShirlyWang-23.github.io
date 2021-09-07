@@ -13,23 +13,24 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="Live everyday to the fullest.">
+  <meta name="description" content="每日一题做题记录">
   <meta name="author" content="Henry">
   <meta name="keywords" content="">
-  <meta name="description" content="Live everyday to the fullest.">
+  <meta name="description" content="每日一题做题记录">
 <meta property="og:type" content="article">
-<meta property="og:title" content="九月计划">
-<meta property="og:url" content="http://example.com/2021/09/06/%E4%B9%9D%E6%9C%88%E8%AE%A1%E5%88%92/index.html">
+<meta property="og:title" content="洛谷刷题日记">
+<meta property="og:url" content="http://example.com/2021/09/07/%E5%88%B7%E9%A2%98%E6%97%A5%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Henry Chi&#39;s Blog">
-<meta property="og:description" content="Live everyday to the fullest.">
+<meta property="og:description" content="每日一题做题记录">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-09-06T08:09:01.000Z">
-<meta property="article:modified_time" content="2021-09-06T13:14:50.855Z">
+<meta property="article:published_time" content="2021-09-07T08:04:39.000Z">
+<meta property="article:modified_time" content="2021-09-07T11:06:26.956Z">
 <meta property="article:author" content="Henry">
-<meta property="article:tag" content="计划">
+<meta property="article:tag" content="刷题">
+<meta property="article:tag" content="洛谷">
 <meta name="twitter:card" content="summary_large_image">
   
-  <title>九月计划 - Henry Chi&#39;s Blog</title>
+  <title>洛谷刷题日记 - Henry Chi&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -176,7 +177,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="九月计划">
+            <span class="h2" id="subtitle" title="洛谷刷题日记">
               
             </span>
 
@@ -186,8 +187,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-09-06 16:09" pubdate>
-        2021年9月6日 下午
+      <time datetime="2021-09-07 16:04" pubdate>
+        2021年9月7日 下午
       </time>
     </span>
   
@@ -197,7 +198,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      147 字
+      1.1k 字
     </span>
   
 
@@ -206,7 +207,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1 分钟
+      4 分钟
     </span>
   
 
@@ -235,28 +236,28 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">九月计划</h1>
+            <h1 style="display: none">洛谷刷题日记</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：2021年9月6日 晚上
+                  本文最后更新于：2021年9月7日 晚上
                 
               </p>
             
             <div class="markdown-body">
-              <h2 id="1-学习"><a href="#1-学习" class="headerlink" title="1. 学习"></a>1. 学习</h2><ol>
-<li>坚持每天刷一道oj</li>
-<li>坚持每天背30个单词</li>
-<li>当天作业当天动笔，尽力完成</li>
-<li>减少在宿舍学习的时间，多去教学楼</li>
-</ol>
-<h2 id="2-生活习惯"><a href="#2-生活习惯" class="headerlink" title="2. 生活习惯"></a>2. 生活习惯</h2><ol>
-<li>每周去健身房锻炼2次</li>
-<li>早上7：30起床，每周执行5次以上</li>
-<li>晚上11点不带手机上床睡觉，每周执行5次以上</li>
-<li>少吃夜宵，每周不超过3次，睡前饿了牛奶+面包更好 :D</li>
-</ol>
-<h2 id="3-心态"><a href="#3-心态" class="headerlink" title="3. 心态"></a>3. 心态</h2><p>不畏难，不怕尴尬 : D</p>
+              <h2 id="2021-9-7"><a href="#2021-9-7" class="headerlink" title="2021/9/7"></a>2021/9/7</h2><h3 id="P1918-保龄球"><a href="#P1918-保龄球" class="headerlink" title="P1918 保龄球"></a><strong>P1918 保龄球</strong></h3><blockquote>
+<p>题意概括：给你一组数字，再给你一组目标数字，求目标数字在原数组中的位置。原题面看<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1918">这里</a></p>
+</blockquote>
+<blockquote>
+<p>难度：普及-</p>
+</blockquote>
+<h3 id="思路记录"><a href="#思路记录" class="headerlink" title="思路记录"></a>思路记录</h3><p>​        第一反应是桶，即用数组的下标表示数字，值表示位置，如pos[goal]=pos， 这样在输入数据后就能直接通过数字得到位置。但是本题的数据范围很大（10^9），空间消耗太大，显然不合适。也肯定不能直接遍历，效率太低。</p>
+<p>​        考虑二分查找，但是由于二分查找需要先对原数组进行排序，这会破坏元素在原数组中的位置，所以想到<strong>结构体</strong>。对于结构体元素使用STL的sort函数进行排序时需要额外定义比较函数（指明比较结构体的哪些元素，即给出比较两个结构体大小的方式），这样这道题就做完了，具体代码如下。</p>
+<p>​        因为题目指明了每个位置的球数不同，所以使用map更简单（其实就是桶的思维），直接无脑解决。</p>
+<h3 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h3><figure class="highlight cpp"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-keyword">int</span> n,Q,goal,i;<br><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">ball_struct</span>&#123;</span><br>    <span class="hljs-keyword">int</span> num;<br>    <span class="hljs-keyword">int</span> pos;<br>&#125;ball[<span class="hljs-number">1000001</span>];<br><br><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">cmp</span><span class="hljs-params">(ball_struct a,ball_struct b)</span></span>&#123;<span class="hljs-comment">//此处定义的是sort的比较函数cmp</span><br>    <span class="hljs-keyword">return</span> a.num&lt;b.num; <span class="hljs-comment">//升序排列</span><br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">binary_search</span><span class="hljs-params">(<span class="hljs-keyword">int</span> key)</span></span>&#123;<br>    <span class="hljs-keyword">int</span> mid,start=<span class="hljs-number">0</span>,end=n<span class="hljs-number">-1</span>;<br>    <span class="hljs-keyword">while</span>(start&lt;=end) &#123;<br>        mid = start+((end-start)&gt;&gt;<span class="hljs-number">1</span>);<span class="hljs-comment">//注意此处采用位操作防止溢出，同时提高执行速度</span><br>        <span class="hljs-keyword">if</span>(key&gt;ball[mid].num) start=mid+<span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(key&lt;ball[mid].num) end=mid<span class="hljs-number">-1</span>;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> ball[mid].pos;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    cin &gt;&gt; n;<br>    <span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;i&lt;n;i++)&#123;<br>        <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>,&amp;ball[i].num);<br>        ball[i].pos=i+<span class="hljs-number">1</span>;<br>    &#125;<br>    cin &gt;&gt; Q;<br>    <span class="hljs-built_in">sort</span>(ball,ball+n,cmp);<br>    <span class="hljs-keyword">while</span>(Q--)&#123;<br>        <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>,&amp;goal);<br>        cout &lt;&lt; <span class="hljs-built_in">binary_search</span>(goal) &lt;&lt; endl;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+
+
 
             </div>
             <hr>
@@ -266,7 +267,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/%E6%9C%88%E8%AE%A1%E5%88%92/">月计划</a>
+                      <a class="hover-with-bg" href="/categories/%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/">刷题记录</a>
                     
                   </div>
                 
@@ -274,7 +275,9 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E8%AE%A1%E5%88%92/">计划</a>
+                      <a class="hover-with-bg" href="/tags/%E5%88%B7%E9%A2%98/">刷题</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%B4%9B%E8%B0%B7/">洛谷</a>
                     
                   </div>
                 
@@ -289,18 +292,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/09/07/%E5%88%B7%E9%A2%98%E6%97%A5%E8%AE%B0/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">洛谷刷题日记</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/08/31/Matlab%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                        <span class="hidden-mobile">Matlab学习笔记</span>
+                      <a href="/2021/09/06/%E4%B9%9D%E6%9C%88%E8%AE%A1%E5%88%92/">
+                        <span class="hidden-mobile">九月计划</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
