@@ -29,7 +29,7 @@
 <meta property="og:image" content="https://img-blog.csdn.net/20160714144315409">
 <meta property="og:image" content="https://img-blog.csdn.net/20160714161107576">
 <meta property="article:published_time" content="2021-09-07T08:04:39.000Z">
-<meta property="article:modified_time" content="2021-09-08T15:09:18.238Z">
+<meta property="article:modified_time" content="2021-09-09T01:40:14.981Z">
 <meta property="article:author" content="Henry">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="数据结构">
@@ -206,7 +206,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      14k 字
+      16k 字
     </span>
   
 
@@ -215,7 +215,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      44 分钟
+      49 分钟
     </span>
   
 
@@ -248,7 +248,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2021年9月8日 晚上
+                  本文最后更新于：2021年9月9日 上午
                 
               </p>
             
@@ -268,7 +268,29 @@
 </blockquote>
 </li>
 </ul>
-<h4 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h4><h3 id="9-7：P1918-保龄球"><a href="#9-7：P1918-保龄球" class="headerlink" title="9/7：P1918 保龄球"></a>9/7：P1918 保龄球</h3><blockquote>
+<h4 id="题目解析"><a href="#题目解析" class="headerlink" title="题目解析"></a>题目解析</h4><p>现在来考虑最小值。很容易想到的是，想要求最小值，我们只需要维护一个单调递增的单调队列即可，队首元素即为当前的最小值。我们使用两个指针<code>head</code>和<code>tail</code>来标记队列的队首和队尾。我们需要考虑三点：</p>
+<ul>
+<li>何时出队？<ul>
+<li>队首元素：因为我们会对队伍元素频繁进行出入队操作，所以需要再开一个数组p，记录一下队首元素的下标。从当前遍历的第i个元素往后数，不在<code>k</code>个数的范围内时，即<code>p[head]&lt;=i-k</code>。<code>head++</code></li>
+<li>队尾元素：<code>a[i]</code>的加入破坏了队列的单调递增性。<code>tail--</code></li>
+</ul>
+</li>
+<li>何时入队？<ul>
+<li><code>a[i]</code>比队尾元素大：如果<code>a[i+1]</code>和<code>a[i+2]</code>都比<code>a[i]</code>大，那么<code>a[i]</code>还是有可能成为最小值的；而且<code>a[i]</code>的加入并不会影响队首元素（输出最小值只和队首元素有关），所以<code>a[i]</code>入队/</li>
+<li><code>a[i]</code>比队尾元素小：此时队尾元素就需要出队了，直到<code>a[i]</code>比队尾元素大或队列为空时，入队。</li>
+</ul>
+</li>
+<li>何时输出？<ul>
+<li><code>i&lt;k</code>时，我们还没完成对第一个窗口的处理，所以不需要输出。</li>
+<li><code>i&gt;=k</code>时，每遍历一个元素（i++），就要输出一次结果。</li>
+</ul>
+</li>
+</ul>
+<h4 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h4><figure class="highlight cpp"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-keyword">int</span> n,k,i,a[<span class="hljs-number">1000001</span>],head,tail,q[<span class="hljs-number">1000001</span>],p[<span class="hljs-number">1000001</span>];<br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">monoQueue_min</span><span class="hljs-params">()</span></span>&#123;<br>    head=<span class="hljs-number">1</span>;<br>    tail=<span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span>(i=<span class="hljs-number">1</span>;i&lt;=n;i++)&#123;<span class="hljs-comment">//维护一个递增的单调队列，队首元素即为最小值</span><br>        <span class="hljs-keyword">while</span>(head&lt;=tail &amp;&amp; a[i]&lt;=q[tail])&#123;<br>            tail--;<br>        &#125;<br>        q[++tail]=a[i];<br>        p[tail]=i;<br>        <span class="hljs-keyword">while</span>(p[head]&lt;=i-k) head++;<span class="hljs-comment">//如果队首元素已经&quot;过时&quot;，出队。</span><br>        <span class="hljs-keyword">if</span>(i&gt;=k) cout&lt;&lt; q[head]&lt;&lt; <span class="hljs-string">&#x27; &#x27;</span>;<br>    &#125;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">monoQueue_max</span><span class="hljs-params">()</span></span>&#123;<br>    head=<span class="hljs-number">1</span>;<br>    tail=<span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span>(i=<span class="hljs-number">1</span>;i&lt;=n;i++)&#123;<span class="hljs-comment">//同理，维护一个递减的单调队列，队首元素即为最值</span><br>        <span class="hljs-keyword">while</span>(head&lt;=tail &amp;&amp; a[i]&gt;=q[tail])&#123;<br>            tail--;<br>        &#125;<br>        q[++tail]=a[i];<br>        p[tail]=i;<br>        <span class="hljs-keyword">while</span>(p[head]&lt;=i-k) head++;<span class="hljs-comment">//如果队首元素已经&quot;过时&quot;，出队。</span><br>        <span class="hljs-keyword">if</span>(i&gt;=k) cout&lt;&lt; q[head] &lt;&lt;<span class="hljs-string">&#x27; &#x27;</span>;<br>    &#125;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    cin &gt;&gt; n &gt;&gt;k;<br>    <span class="hljs-keyword">for</span>(i=<span class="hljs-number">1</span>;i&lt;=n;i++) <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>,&amp;a[i]);<br>    <span class="hljs-built_in">monoQueue_min</span>();<br>    cout &lt;&lt;endl;<br>    <span class="hljs-built_in">monoQueue_max</span>();<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+
+
+<h3 id="9-7：P1918-保龄球"><a href="#9-7：P1918-保龄球" class="headerlink" title="9/7：P1918 保龄球"></a>9/7：P1918 保龄球</h3><blockquote>
 <p>难度：普及-</p>
 </blockquote>
 <blockquote>
