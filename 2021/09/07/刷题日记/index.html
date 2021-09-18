@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://img-blog.csdn.net/20160714144315409">
 <meta property="og:image" content="https://img-blog.csdn.net/20160714161107576">
 <meta property="article:published_time" content="2021-09-07T08:04:39.000Z">
-<meta property="article:modified_time" content="2021-09-18T13:02:52.757Z">
+<meta property="article:modified_time" content="2021-09-18T14:47:40.639Z">
 <meta property="article:author" content="Henry">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="数据结构">
@@ -219,7 +219,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      75 分钟
+      77 分钟
     </span>
   
 
@@ -257,7 +257,32 @@
               </p>
             
             <div class="markdown-body">
-              <h2 id="2021-9"><a href="#2021-9" class="headerlink" title="2021/9"></a>2021/9</h2><h3 id="9-18"><a href="#9-18" class="headerlink" title="9/18"></a>9/18</h3><h4 id="201912-2-回收站"><a href="#201912-2-回收站" class="headerlink" title="201912-2 回收站"></a>201912-2 回收站</h4><p>题目链接看<a target="_blank" rel="noopener" href="http://118.190.20.162/view.page?gpid=T99">这里</a>。</p>
+              <h2 id="2021-9"><a href="#2021-9" class="headerlink" title="2021/9"></a>2021/9</h2><h3 id="9-18"><a href="#9-18" class="headerlink" title="9/18"></a>9/18</h3><h4 id="考前复习"><a href="#考前复习" class="headerlink" title="考前复习"></a>考前复习</h4><blockquote>
+<p>看了几个b站视频，在这里梳理一下</p>
+</blockquote>
+<h5 id="第一题"><a href="#第一题" class="headerlink" title="第一题"></a>第一题</h5><ul>
+<li><p>注意细节：</p>
+<ul>
+<li>long long：有时候用int可能会爆</li>
+<li>边界</li>
+<li>特殊情况</li>
+</ul>
+</li>
+<li><p>一些技巧：</p>
+<ul>
+<li><p>声明数组大小的时候，最好用const定义伪常量方便修改。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs cpp"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> N=<span class="hljs-number">1005</span>;<br><span class="hljs-keyword">int</span> num[N];<br></code></pre></div></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h5 id="第二题"><a href="#第二题" class="headerlink" title="第二题"></a>第二题</h5><ul>
+<li>STL！</li>
+</ul>
+<h5 id="注意点：考场的vsc没网，这里截取了code-runner的命令行编译，考试套上去即可"><a href="#注意点：考场的vsc没网，这里截取了code-runner的命令行编译，考试套上去即可" class="headerlink" title="注意点：考场的vsc没网，这里截取了code runner的命令行编译，考试套上去即可"></a>注意点：考场的vsc没网，这里截取了code runner的命令行编译，考试套上去即可</h5><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-comment"># 当前目录：henry@pluto ~/Code/Visual_Studio_Code/C++ </span><br>$ <span class="hljs-built_in">cd</span> <span class="hljs-string">&quot;/home/henry/Code/Visual_Studio_Code/C++/&quot;</span> &amp;&amp; g++ 202104_1.cpp -o 202104_1 &amp;&amp; <span class="hljs-string">&quot;/home/henry/Code/Visual_Studio_Code/C++/&quot;</span>202104_1<br></code></pre></div></td></tr></table></figure>
+
+
+
+<h4 id="201912-2-回收站"><a href="#201912-2-回收站" class="headerlink" title="201912-2 回收站"></a>201912-2 回收站</h4><p>题目链接看<a target="_blank" rel="noopener" href="http://118.190.20.162/view.page?gpid=T99">这里</a>。</p>
 <blockquote>
 <p>题意概括：给你n（n&lt;=1000）个回收站坐标(x, y)，其中x和y的范围可以达到10的九次方。对于一个点，要求其上下左右都有回收站，求出该点的四个斜角有回收站的数目，分别计入得分0-4分，输出0-4分的回收站数目。</p>
 </blockquote>
