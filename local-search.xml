@@ -33,6 +33,27 @@
   
   
   <entry>
+    <title>git操作</title>
+    <link href="/2021/09/26/git%E6%93%8D%E4%BD%9C/"/>
+    <url>/2021/09/26/git%E6%93%8D%E4%BD%9C/</url>
+    
+    <content type="html"><![CDATA[<h2 id="1-远程库操作"><a href="#1-远程库操作" class="headerlink" title="1. 远程库操作"></a>1. 远程库操作</h2><h3 id="1-1-关联远程库"><a href="#1-1-关联远程库" class="headerlink" title="1.1 关联远程库"></a>1.1 关联远程库</h3><p>关联一个远程库，使用命令<code>git remote add origin git@server-name:path/repo-name.git</code>；</p><p>关联一个远程库时必须给远程库指定一个名字，<code>origin</code>是默认习惯命名；</p><p>使用命令<code>git push -u origin master</code>第一次推送master分支的所有内容；</p><p>此后，每次本地提交后，就可以使用命令<code>git push origin master</code>推送最新修改；</p><h3 id="1-2-克隆远程库"><a href="#1-2-克隆远程库" class="headerlink" title="1.2 克隆远程库"></a>1.2 克隆远程库</h3><figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs git">$ git clone git@github.com:用户名/repo-name.git<br></code></pre></div></td></tr></table></figure><p>或者使用http协议：(慢)</p><figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs git">$ git clone http://<br></code></pre></div></td></tr></table></figure><h2 id="2-git操作"><a href="#2-git操作" class="headerlink" title="2. git操作"></a>2. git操作</h2><ol><li><p>撤销修改</p><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ git checkout -- xxx //让这个文件回到最近一次git commit或git add时的状态。<br></code></pre></div></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ git reset HEAD xxx//可以把暂存区的修改撤销掉（unstage），<br></code></pre></div></td></tr></table></figure></li></ol>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>笔记</tag>
+      
+      <tag>git</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>机器学习学习笔记</title>
     <link href="/2021/09/25/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     <url>/2021/09/25/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
