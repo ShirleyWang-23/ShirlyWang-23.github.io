@@ -206,7 +206,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      8.2k 字
+      8.9k 字
     </span>
   
 
@@ -215,7 +215,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      26 分钟
+      28 分钟
     </span>
   
 
@@ -254,7 +254,7 @@
             
             <div class="markdown-body">
               <h1 id="Latex学习笔记"><a href="#Latex学习笔记" class="headerlink" title="Latex学习笔记"></a>Latex学习笔记</h1><p>转载自：原文<a target="_blank" rel="noopener" href="https://liam.page/2014/09/08/latex-introduction/">链接</a></p>
-<h2 id="0-简介"><a href="#0-简介" class="headerlink" title="0. 简介"></a>0. 简介</h2><p>TeX - pdfTeX - XeTeX - LuaTeX 都是排版引擎，按照先进程度递增（LuaTeX 尚未完善）。</p>
+<h2 id="0-简介与模板"><a href="#0-简介与模板" class="headerlink" title="0.简介与模板"></a>0.简介与模板</h2><h3 id="0-1-简介"><a href="#0-1-简介" class="headerlink" title="0.1 简介"></a>0.1 简介</h3><p>TeX - pdfTeX - XeTeX - LuaTeX 都是排版引擎，按照先进程度递增（LuaTeX 尚未完善）。</p>
 <p>LaTeX 是一种格式，基于 TeX 格式定义了很多更方便使用的控制命令。上述四个引擎都有对应的程序将 LaTeX 格式解释成引擎能处理的内容。</p>
 <p>CTeX, MiKTeX, TeX Live 都是 TeX 的发行，他们是许许多多东西的集合。</p>
 <h4 id="遇到问题怎么办"><a href="#遇到问题怎么办" class="headerlink" title="遇到问题怎么办"></a>遇到问题怎么办</h4><ol>
@@ -264,6 +264,9 @@
 <li>在各个论坛或者 LaTeX 交流群里聪明地提出你的问题。</li>
 </ol>
 <p>参考：<a target="_blank" rel="noopener" href="https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/master/README-zh_CN.md">https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/master/README-zh_CN.md</a></p>
+<h3 id="0-2-模板"><a href="#0-2-模板" class="headerlink" title="0.2 模板"></a>0.2 模板</h3><p>一个非常优雅的作业模板: D</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs latex">\documentclass[UTF8,12pt]&#123;ctexart&#125;<br>\usepackage[T1]&#123;fontenc&#125;<br>\usepackage&#123;newpxtext,newpxmath&#125; % palatino风格字体<br>\usepackage&#123;geometry&#125; % 调整页边距<br>\geometry&#123;a4paper,scale=0.8&#125; % 调整页边距<br>\ctexset&#123;section=&#123;format=&#123;\large\bfseries\raggedright&#125;&#125;&#125;  % section居左<br><br>\setCJKmainfont[BoldFont=SimHei, ItalicFont=KaiTi]&#123;SimSun&#125; % 字体设置overleaf %SimHei<br><br>\title&#123;\bfseries 文章标题&#125;<br>\author&#123;Henry Chi&#125;<br>\date&#123;\today&#125;<br><br>\begin&#123;document&#125;<br><br>\maketitle<br><br>\section&#123;Hello 世界&#125;<br><br>How are you? 我很好。<br><br>The quick brown fox jumps over a lazy dog.<br><br>\emph&#123;The quick brown fox jumps over a lazy dog.&#125;<br><br>\end&#123;document&#125;<br></code></pre></div></td></tr></table></figure>
+
 <h2 id="1-第一篇文档"><a href="#1-第一篇文档" class="headerlink" title="1. 第一篇文档"></a>1. 第一篇文档</h2><h3 id="Hello-world"><a href="#Hello-world" class="headerlink" title="Hello, world!"></a>Hello, world!</h3><p>在编辑框中，输入如下内容：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs latex">`\documentclass&#123;article&#125;<br>% 这里是导言区<br>\begin&#123;document&#125;<br>Hello, world!<br>\end&#123;document&#125;<br></code></pre></div></td></tr></table></figure>
 
