@@ -13,23 +13,25 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="C++基础知识">
+  <meta name="description" content="资产证券化笔记">
   <meta name="author" content="Shirley">
   <meta name="keywords" content="">
-  <meta name="description" content="C++基础知识">
+  <meta name="description" content="资产证券化笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C++学习笔记">
-<meta property="og:url" content="http://example.com/2021/08/31/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:title" content="资产证券化">
+<meta property="og:url" content="http://example.com/2021/11/06/%E8%B5%84%E4%BA%A7%E8%AF%81%E5%88%B8%E5%8C%96/index.html">
 <meta property="og:site_name" content="Shirley Wang&#39;s Blog">
-<meta property="og:description" content="C++基础知识">
+<meta property="og:description" content="资产证券化笔记">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-08-31T09:19:39.000Z">
-<meta property="article:modified_time" content="2021-11-06T08:03:53.488Z">
+<meta property="og:image" content="http://example.com/2021/11/06/%E8%B5%84%E4%BA%A7%E8%AF%81%E5%88%B8%E5%8C%96/image-20211106201459359.png">
+<meta property="article:published_time" content="2021-11-06T07:59:41.000Z">
+<meta property="article:modified_time" content="2021-11-06T12:18:14.805Z">
 <meta property="article:author" content="Shirley">
-<meta property="article:tag" content="C++">
+<meta property="article:tag" content="ABS">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/2021/11/06/%E8%B5%84%E4%BA%A7%E8%AF%81%E5%88%B8%E5%8C%96/image-20211106201459359.png">
   
-  <title>C++学习笔记 - Shirley Wang&#39;s Blog</title>
+  <title>资产证券化 - Shirley Wang&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -176,7 +178,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="C++学习笔记">
+            <span class="h2" id="subtitle" title="资产证券化">
               
             </span>
 
@@ -186,8 +188,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-08-31 17:19" pubdate>
-        2021年8月31日 下午
+      <time datetime="2021-11-06 15:59" pubdate>
+        2021年11月6日 下午
       </time>
     </span>
   
@@ -197,7 +199,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2.1k 字
+      564 字
     </span>
   
 
@@ -206,7 +208,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      6 分钟
+      2 分钟
     </span>
   
 
@@ -235,105 +237,39 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">C++学习笔记</h1>
+            <h1 style="display: none">资产证券化</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：2021年11月6日 下午
+                  本文最后更新于：2021年11月6日 晚上
                 
               </p>
             
             <div class="markdown-body">
-              <h2 id="Part1：菜鸟教程"><a href="#Part1：菜鸟教程" class="headerlink" title="Part1：菜鸟教程"></a>Part1：菜鸟教程</h2><h3 id="1-C-基本数据类型"><a href="#1-C-基本数据类型" class="headerlink" title="1. C++基本数据类型"></a>1. C++基本数据类型</h3><p>C++ 为程序员提供了种类丰富的内置数据类型和用户自定义的数据类型。下表列出了七种基本的 C++ 数据类型：</p>
-<table>
-<thead>
-<tr>
-<th align="center">类型</th>
-<th align="center">关键字</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">布尔型</td>
-<td align="center">bool</td>
-</tr>
-<tr>
-<td align="center">字符型</td>
-<td align="center">char</td>
-</tr>
-<tr>
-<td align="center">整型</td>
-<td align="center">int</td>
-</tr>
-<tr>
-<td align="center">浮点型</td>
-<td align="center">float</td>
-</tr>
-<tr>
-<td align="center">双浮点型</td>
-<td align="center">double</td>
-</tr>
-<tr>
-<td align="center">无类型</td>
-<td align="center">void</td>
-</tr>
-<tr>
-<td align="center">宽字符型</td>
-<td align="center">wchar_t</td>
-</tr>
-</tbody></table>
-<blockquote>
-<p>我们不应把 true 的值看成 1，把 false 的值看成 0。</p>
-</blockquote>
-<h3 id="2-C-修饰符类型"><a href="#2-C-修饰符类型" class="headerlink" title="2. C++修饰符类型"></a>2. C++修饰符类型</h3><p>C++ 允许在 <strong>char、int 和 double</strong> 数据类型前放置修饰符。修饰符用于改变基本类型的含义，所以它更能满足各种情境的需求。</p>
-<p>下面列出了数据类型修饰符：</p>
-<ul>
-<li>signed</li>
-<li>unsigned</li>
-<li>long</li>
-<li>short</li>
+              <h4 id="资产证券化分类"><a href="#资产证券化分类" class="headerlink" title="资产证券化分类"></a>资产证券化分类</h4><ul>
+<li>住房抵押贷款 MBS：<ul>
+<li>住宅抵押担保证券 RMBS   </li>
+<li>商业地产抵押担保证券 CMBS</li>
+<li>其他衍生证券 CMO</li>
 </ul>
-<p>修饰符 <strong>signed、unsigned、long 和 short</strong> 可应用于整型，<strong>signed</strong> 和 <strong>unsigned</strong> 可应用于字符型，<strong>long</strong> 可应用于双精度型。</p>
-<p>修饰符 <strong>signed</strong> 和 <strong>unsigned</strong> 也可以作为 <strong>long</strong> 或 <strong>short</strong> 修饰符的前缀。例如：<strong>unsigned long int</strong>。</p>
-<p>C++ 允许使用速记符号来声明<strong>无符号短整数</strong>或<strong>无符号长整数</strong>。您可以不写 int，只写单词 <strong>unsigned、short</strong> 或 <strong>unsigned、long</strong>，<code>int</code> 是隐含的。</p>
-<h3 id="3-C-储存类"><a href="#3-C-储存类" class="headerlink" title="3.C++储存类"></a>3.C++储存类</h3><p><strong>static</strong> 存储类指示编译器在程序的生命周期内保持局部变量的存在，而不需要在每次它进入和离开作用域时进行创建和销毁。</p>
-<p>因此，使用 static 修饰局部变量可以在函数调用之间保持局部变量的值。</p>
-<h3 id="4-数组"><a href="#4-数组" class="headerlink" title="4. 数组"></a>4. 数组</h3><p>所有的数组都是由连续的内存位置组成。最低的地址对应第一个元素，最高的地址对应最后一个元素。</p>
-<h3 id="5-引用"><a href="#5-引用" class="headerlink" title="5.引用"></a>5.引用</h3><p>引用变量是某个已存在变量的另一个名字。一旦把引用初始化为某个变量，就可以使用该引用名称或变量名称来指向变量。</p>
-<h4 id="C-引用-vs-指针"><a href="#C-引用-vs-指针" class="headerlink" title="C++ 引用 vs 指针"></a>C++ 引用 vs 指针</h4><p>引用很容易与指针混淆，它们之间有三个主要的不同：</p>
-<ul>
-<li>不存在空引用。引用必须连接到一块合法的内存。</li>
-<li>一旦引用被初始化为一个对象，就不能被指向到另一个对象。指针可以在任何时候指向到另一个对象。</li>
-<li>引用必须在创建时被初始化。指针可以在任何时间被初始化。</li>
+</li>
+<li>资产支持证券 ABS：<ul>
+<li>ABS  基础资产为汽车贷款、信用卡贷款、学生贷款等</li>
+<li>CDO 基础资产为债券抵押债券和贷款抵押债券</li>
 </ul>
-<p>我们可以为 i 声明引用变量，如下所示：</p>
-<figure class="highlight 1c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs 1c">int<span class="hljs-meta">&amp;  r = i;</span><br></code></pre></div></td></tr></table></figure>
-
-<p>之后，r就可以当作正常的变量使用</p>
-<figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">swap</span><span class="hljs-params">(<span class="hljs-keyword">int</span>&amp; x, <span class="hljs-keyword">int</span>&amp; y)</span></span><br><span class="hljs-function"></span>&#123;<br>   <span class="hljs-keyword">int</span> temp;<br>   temp = x; <span class="hljs-comment">/* 保存地址 x 的值 */</span><br>   x = y;    <span class="hljs-comment">/* 把 y 赋值给 x */</span><br>   y = temp; <span class="hljs-comment">/* 把 x 赋值给 y  */</span><br>   <span class="hljs-keyword">return</span>;<br>&#125;<span class="hljs-comment">//通过引用的方式传入参数，既可以免去指针操作的繁琐，又可以修改原参数</span><br></code></pre></div></td></tr></table></figure>
-
-<h1 id="Part2：OI-WIKI"><a href="#Part2：OI-WIKI" class="headerlink" title="Part2：OI WIKI"></a>Part2：OI WIKI</h1><h2 id="1-内存分配"><a href="#1-内存分配" class="headerlink" title="1. 内存分配"></a>1. 内存分配</h2><p>​        C++ 中新增了 <code>new</code> 和 <code>delete</code> 关键字用来在“自由存储区”上分配空间，这个自由存储区可以是堆也可以是静态存储区，他们是为了配合“类”而出现的。其中 <code>delete[]</code> 还能够直接释放动态数组的内存，非常方便。<code>new</code> 和 <code>delete</code> 关键字会调用类型的构造函数和析构函数，相比 C 中的 <code>malloc()</code>、<code>realloc()</code>、<code>free()</code> 函数，他们对类型有更完善的支持，<strong>但是效率不如 C 中的这些函数</strong>。</p>
-<p>​        简而言之，如果你需要动态分配内存的对象是<strong>基础类型或他们的数组</strong>，那么你可以**使用 <code>malloc()</code> **进行更高效的内存分配；但如果你新建的对象是非基础的类型，那么建议使用 <code>new</code> 以获得安全性检查。值得注意的是尽管 <code>new</code> 和 <code>malloc()</code> 都是返回指针，但是 <code>new</code> 出来的指针 <strong>只能</strong> 用 <code>delete</code> 回收，而 <code>malloc()</code> 出来的指针也只能用 <code>free()</code> 回收，否则会有内存泄漏的风险</p>
-<h2 id="2-struct"><a href="#2-struct" class="headerlink" title="2. struct"></a>2. struct</h2><p>​    尽管在 C 和 C++ 中都有 struct 的概念，但是他们对应的东西是不能混用的！C 中的 struct 用来描述一种固定的内存组织结构，而 <strong>C++ 中的 struct 就是一种类</strong>，<strong>它与类唯一的区别就是它的成员和继承行为默认是 public 的</strong>，而一般类的默认成员是 private 的。这一点在写 C/C++ 混合代码时尤其致命。</p>
-<p>另外，声明 struct 时 C++ 也不需要像 C 那么繁琐，</p>
-<p>C 版本：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs cpp"><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node_t</span>&#123;</span><br>    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node_t</span> *<span class="hljs-title">next</span>;</span><br>    <span class="hljs-keyword">int</span> key;<br>&#125; Node;<br></code></pre></div></td></tr></table></figure>
-
-<p>C++ 版本</p>
-<figure class="highlight cpp"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs cpp"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span> &#123;</span><br>  Node *next;<br>  <span class="hljs-keyword">int</span> key;<br>&#125;;<span class="hljs-comment">//和类的声明非常类似</span><br></code></pre></div></td></tr></table></figure>
-
-<h2 id="3-类"><a href="#3-类" class="headerlink" title="3. 类"></a>3. 类</h2><p>类（class）是结构体的拓展，不仅能够拥有成员元素，还拥有成员函数。</p>
-<p>C++ 中 <code>struct</code> 关键字定义的也是类，上文中的 <strong>结构体</strong> 的定义来自 C。因为某些历史原因，C++ 保留并拓展了 <code>struct</code>。</p>
-<h3 id="定义类"><a href="#定义类" class="headerlink" title="定义类"></a>定义类</h3><p>类使用关键字 <code>class</code> 或者 <code>struct</code> 定义，下文以 <code>class</code> 举例。</p>
-<h3 id="访问说明符"><a href="#访问说明符" class="headerlink" title="访问说明符"></a>访问说明符</h3><ul>
-<li><code>public</code>：<strong>类内</strong> 还是 <strong>类外</strong> 都可以访问。</li>
-<li><code>protected</code>：可以被<strong>类内、派生类</strong>或者友元的成员访问，但类外<strong>不能访问</strong>。</li>
-<li><code>private</code>：只能被 <strong>类内</strong> 成员或者友元的成员访问，<strong>不能</strong> 被从类外或者派生类中访问。</li>
+</li>
 </ul>
-<p>对于 <code>struct</code>，它的所有成员都是默认 <code>public</code>。对于 <code>class</code>，它的所有成员都是默认 <code>private</code>。</p>
-<blockquote>
-<p>友元：使用 <code>friend</code> 关键字修饰某个函数或者类。</p>
-<p>简单来说就是只要带有这个类的 <code>friend</code> 标记，就<strong>可以访问私有</strong>或<strong>受保护</strong>的成员元素。</p>
-</blockquote>
+<h4 id="资产证券化流程"><a href="#资产证券化流程" class="headerlink" title="资产证券化流程"></a>资产证券化流程</h4><p><strong>第一步，</strong>发起人（也即资金的需求方）明确其将要实施证券化的资产，必要情况下也可以将多种相似资产进行剥离、整合组建成资产池</p>
+<p><strong>第二步，</strong>设立特别目的载体（Special Purpose Vehicle, SPV），其作为证券的发行机构，并保证其能够实现和发起人之间的破产隔离</p>
+<p><strong>第三步，</strong>发起人将其欲证券化的资产或资产池转让给SPV，且转让必须构成真实出售</p>
+<p><strong>第四步，</strong>发起人或者第三方机构对已转让给SPV的资产或资产池进行信用增级</p>
+<p><strong>第五步，</strong>由中立的信用评级机构对SPV拟发行的资产支持证券进行信用评级</p>
+<p><strong>第六步，</strong>SPV以特定的资产或资产池为基础，进行结构化重组，通过承销商采用公开发售或者私募的方式发行证券</p>
+<p><strong>第七步，</strong>SPV以证券发行收入为基础，向发起人支付其原始资产转让的款项</p>
+<p><strong>第八步，</strong>由SPV或其他机构作为服务商，对资产或资产池进行日常管理，收集其产生的现金流，并负责账户之间的资金划拨和相关税务和行政事务</p>
+<p><strong>第九步，</strong>SPV以上述现金流为基础，向持有资产支持证券的投资者还本付息，在全部偿付之后若还有剩余，则将剩余现金返还给发起人</p>
+<p>test</p>
+<p><img src="/2021/11/06/%E8%B5%84%E4%BA%A7%E8%AF%81%E5%88%B8%E5%8C%96/image-20211106201459359.png" srcset="/img/loading.gif" lazyload alt="test"></p>
 
             </div>
             <hr>
@@ -345,15 +281,13 @@
                     
                       <a class="hover-with-bg" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
                     
-                      <a class="hover-with-bg" href="/categories/%E7%AC%94%E8%AE%B0/%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/">语言学习</a>
-                    
                   </div>
                 
                 
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/C/">C++</a>
+                      <a class="hover-with-bg" href="/tags/ABS/">ABS</a>
                     
                   </div>
                 
@@ -368,15 +302,15 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/11/06/%E8%B5%84%E4%BA%A7%E8%AF%81%E5%88%B8%E5%8C%96/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">资产证券化</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2021/08/31/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                        <span class="hidden-mobile">C++学习笔记</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
